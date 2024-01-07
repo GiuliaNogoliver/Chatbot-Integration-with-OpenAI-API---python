@@ -1,17 +1,28 @@
-import openai
-import streamlit as st
 import os
+import streamlit as st
+from openai import OpenAI
 
-openai.api_key = os.getenv("SENHA_OPEN_AI")
-
-st.title("Chat com ChatGPT Turbo")
+st.title("Chat com ChatGPT 4")
 st.write("***")
 
-if "nome_usuario" not in st.session_state:
-    st.session_state.nome_usuario = []
+client = OpenAI(
+    api_key=os.environ.get("SENHA_OPEN_AI"),
+)
 
+question = st.text_input("Digite a pergunta:")
+btn_send = st.button("Enviar pergunta")
 
-nome = st.text_input("Dígite o nome do usuário")
-st.session_state.nome_usuario.append(nome)
-for i in range(len(st.session_state.nome_usuario)):
-    st.write(st.session_state.nome_usuario[i])
+if btn_send:
+    resposta = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": question,
+            }
+        ],
+        model="gpt-3.5-turbo",
+        max_tokens=500,
+        n=1
+    )
+    resposta_content = resposta.choices[0].message.content
+    st.write("Resposta:", resposta_content)
