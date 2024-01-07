@@ -1,6 +1,7 @@
 import os
 import streamlit as st
 from openai import OpenAI
+from streamlit_chat import message as msg
 
 st.title("Chat com ChatGPT 3.5")
 st.write("***")
@@ -37,9 +38,9 @@ if btn_send:
 if len(st.session_state.hst_conversation) > 0:
     for i in range(len(st.session_state.hst_conversation)):
         if i % 2 == 0:
-            st.write("Você: " + st.session_state.hst_conversation[i]['content'])
+            msg("Você: " + st.session_state.hst_conversation[i]['content'], is_user=True)
         else:
-            st.write("Resposta IA: " + st.session_state.hst_conversation[i]['content'])
+            msg("Resposta IA: " + st.session_state.hst_conversation[i]['content'])
 
     #resposta_content = answer.choices[0].message.content
     #st.write("Resposta:", resposta_content)
