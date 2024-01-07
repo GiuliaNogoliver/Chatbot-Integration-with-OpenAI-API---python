@@ -26,3 +26,5 @@ if btn_calc:
     else: result = prm_num - seg_num
     st.subheader(f"O resultado da operaçao selecionada é igual a {result}")
 
+st.write("Uso básico do Streamlit, 07/05/2024 - Giulia Dev")
+
