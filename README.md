@@ -1,7 +1,7 @@
 # Fazer download das lib
 
-pip install streamlit
-pip install openai
+## pip install streamlit
+## pip install openai
 pip install streamlit_chat
 pip install docx
 pip install io
