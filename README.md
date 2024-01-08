@@ -1,10 +1,10 @@
 # Fazer download das lib
 
-## pip install streamlit
-## pip install openai
-pip install streamlit_chat
-pip install docx
-pip install io
+pip install streamlit 
+pip install openai 
+pip install streamlit_chat 
+pip install docx 
+pip install io 
 
 # Configurar chave da open AI
 
