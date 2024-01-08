@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Meu primeiro programa python")
+st.title("Meu primeiro Aplicativo")
 st.header("Teste cabeçalho")
 st.subheader("Teste subcabeçalho")
 st.write("Teste escrita simples")
